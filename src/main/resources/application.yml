@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: user-event-service
+
+  kafka:
+    bootstrap-servers: redpanda-0:19092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JacksonJsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+app:
+  kafka:
+    user-topic: user-updates-topic

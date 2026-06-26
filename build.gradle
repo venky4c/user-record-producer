@@ -1,0 +1,63 @@
+plugins {
+    id 'org.springframework.boot' version '4.1.0'
+    id 'io.spring.dependency-management' version '1.1.7' // or latest 1.x version
+    id 'java'
+}
+
+group = 'com.venky.demos'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Core Web Starter
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // CRITICAL FOR SPRING BOOT 4: Adds Jackson Databind & ObjectMapper back to the project
+    implementation("org.springframework.boot:spring-boot-starter-json")
+
+    // Spring Boot Managed Kafka Starter
+    implementation("org.springframework.boot:spring-boot-starter-kafka")
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+//dependencies {
+//    // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+//    implementation("org.springframework.boot:spring-boot-starter")
+//
+//    // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+//    implementation("org.springframework.boot:spring-boot-starter-web")
+//
+//    //implementation 'org.springframework.boot:spring-boot-starter-json'
+//
+//
+//    // Source: https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
+//    implementation("org.springframework.kafka:spring-kafka:4.1.0")
+//
+//    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+//    implementation 'org.apache.kafka:kafka-clients:3.3.1'
+//
+//    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+//    implementation 'org.slf4j:slf4j-api:1.7.36'
+//
+//    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+//    implementation 'org.slf4j:slf4j-simple:1.7.36'
+//
+//    // Source: https://mvnrepository.com/artifact/org.projectlombok/lombok
+//    implementation("org.projectlombok:lombok:1.18.46")
+//
+//    testImplementation platform('org.junit:junit-bom:6.0.0')
+//    testImplementation 'org.junit.jupiter:junit-jupiter'
+//    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+//}
+
+test {
+    useJUnitPlatform()
+}
