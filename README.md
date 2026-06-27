@@ -1,4 +1,9 @@
 # user-record-producer
+<p align="center">
+  <img src="user-record-producer\src\main\resources\assets\kafka101.png" alt="Java, Spring Boot, and Kafka Banner" width="100%">
+</p>
+
+
 a humble kafka producer that uses java record to publish to kafka
 
 Published data to Kafka Producer using:
