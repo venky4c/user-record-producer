@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/users")
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class InventoryMovementController {
 
     Logger log = LoggerFactory.getLogger(InventoryMovementController.class.getSimpleName());
     private final KafkaProducerService service;
-    public InventoryMovementController(KafkaProducerService service){
-        this.service = service;
-    }
+    //public InventoryMovementController(KafkaProducerService service){
+//        this.service = service;
+//    }
 
     @PostMapping("/{userId}/events")
     public ResponseEntity<String> triggerEvent(@PathVariable("userId") String userId,
