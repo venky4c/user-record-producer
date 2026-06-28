@@ -7,10 +7,13 @@
 
 A Kafka project that uses various concepts of Kafka to act as a reference for implementation of different concepts and config properties defined in Apache Kafka.
 
-Published data to Kafka Producer using:
+Published data to Kafka Producer. Salient features are:
 
-a. Conduktor io platform which was hosted on the remote. Used Ubuntu on WSL2 to link to Conduktor via the Docker desktop
+a. Used Ubuntu on WSL2 on the Docker desktop to link to Conduktor where the bootstrap servers are hosted.
 
-b. java 17 feature of 'record' as the value-serializer from 'org.springframework.kafka.support.serializer.JacksonJsonSerializer' instead of plain StringSerializer
+b. Used java 17 feature of 'record' as the value-serializer from 'org.springframework.kafka.support.serializer.JacksonJsonSerializer' instead of plain StringSerializer
 
-c. used lombok for Dependency Injection in place of constructor DI via the RequiredArgsConstructor
+c. Used lombok for Dependency Injection in place of constructor DI via the RequiredArgsConstructor
+Learnt that - Lombok only targets final fields for @RequiredArgsConstructor. Removing final from userTopic stops Lombok from expecting a String bean in the constructor.
+
+tbd - how to apply this same Strategy Pattern to the Consumer side to handle changing processing requirements?
